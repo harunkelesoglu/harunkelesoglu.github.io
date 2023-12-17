@@ -318,5 +318,14 @@ time {
   .card-body {
     color: #6c757d!important;
   }
+
+  #search-input {
+    background: #1a1a1a!important;
+    color: #ffffff!important;
+  }
+  #results-container {
+    background: #1a1a1a!important;
+    color:  color: #6c757d!important;
+  }
 }
 
