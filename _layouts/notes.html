@@ -24,10 +24,6 @@ layout: default
 </style>
 <section class="posts">
   <!-- <h1 style="color: #e03c31">Example Blog</h1> -->
-  <!-- <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search for a tag or post...">
-    <ol id="results-container"></ol>
-  </div> -->
   <!-- <h2 style="color: #e03c31">Feed</h2>
   <a href="{{ site.baseurl }}/atom.xml" class="rss">RSS <span class="fa fa-rss" style="color: #ee802f"></span></a>
   <a href="{{ site.baseurl }}/feed.json" class="rss">JSON <span class="fa fa-rss" style="color: #ee802f"></span></a> -->
@@ -39,6 +35,10 @@ layout: default
     {% endfor %}
   </p> -->
   <h2 style="color: #e03c31" class="venenosa">Notes</h2>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search for a tag or notes...">
+    <ol id="results-container"></ol>
+  </div>
   <ul>
     {% for note in site.notes %}
       <li><a style="color: black;" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a><time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%m-%d-%Y" }}</time></li>

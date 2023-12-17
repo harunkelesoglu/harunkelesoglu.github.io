@@ -18,32 +18,33 @@ layout: null
     },{% else %}"{{ site.author }}",{% endif %}
     {% endif %}
 "items": [
-    {% for post in site.posts limit:36 %}
+    {% assign all_content = site.research | concat: site.notes %}
+    {% for content in all_content limit:36 %}
         {
-            "id": "{{ post.url | absolute_url | sha1 }}",
-            "title": {{ post.title | jsonify }},
-            "summary": {{ post.description | jsonify }},
-            "content_text": {{ post.content | strip_html | strip_newlines | jsonify }},
-            "content_html": {{ post.content | strip_newlines | jsonify }},
-            "url": "{{ post.url | absolute_url }}",
-            {% if post.image.size > 1 %}"image": {{ post.image | jsonify }},{% endif %}
-            {% if post.link.size > 1 %}"external_url": "{{ post.link }}",{% endif %}
-            {% if post.banner.size > 1 %}"banner_image": "{{ post.banner }}",{% endif %}
-            {% if post.tags.size > 1 %}"tags": {{ post.tags | jsonify }},{% endif %}
-            {% if post.enclosure.size > 1 %}"attachments": [ {
-              "url": "{{ post.enclosure }}",
-              "mime_type": "{{ post.enclosure_type }}",
-              "size_in_bytes": "{{ post.enclosure_length }}"
+            "id": "{{ content.url | absolute_url | sha1 }}",
+            "title": {{ content.title | jsonify }},
+            "summary": {{ content.description | jsonify }},
+            "content_text": {{ content.content | strip_html | strip_newlines | jsonify }},
+            "content_html": {{ content.content | strip_newlines | jsonify }},
+            "url": "{{ content.url | absolute_url }}",
+            {% if content.image.size > 1 %}"image": {{ content.image | jsonify }},{% endif %}
+            {% if content.link.size > 1 %}"external_url": "{{ content.link }}",{% endif %}
+            {% if content.banner.size > 1 %}"banner_image": "{{ content.banner }}",{% endif %}
+            {% if content.tags.size > 1 %}"tags": {{ content.tags | jsonify }},{% endif %}
+            {% if content.enclosure.size > 1 %}"attachments": [ {
+              "url": "{{ content.enclosure }}",
+              "mime_type": "{{ content.enclosure_type }}",
+              "size_in_bytes": "{{ content.enclosure_length }}"
             },{% endif %}
-            "date_published": "{{ post.date | date_to_xmlschema }}",
-            "date_modified": "{{ post.date | date_to_xmlschema }}",
-            {% if post.author %}
-                "author": {% if post.author.name %} {
-                "name": "{{ post.author.name }}",
-                "url": {% if post.author.url %}"{{ post.author.url }}"{% else %}null{% endif %},
-                "avatar": {% if post.author.avatar %}"{{ post.author.avatar }}"{% else %}null{% endif %}
+            "date_published": "{{ content.date | date_to_xmlschema }}",
+            "date_modified": "{{ content.date | date_to_xmlschema }}",
+            {% if content.author %}
+                "author": {% if content.author.name %} {
+                "name": "{{ content.author.name }}",
+                "url": {% if content.author.url %}"{{ content.author.url }}"{% else %}null{% endif %},
+                "avatar": {% if content.author.avatar %}"{{ content.author.avatar }}"{% else %}null{% endif %}
                 }
-                {% else %}"{{ post.author }}"{% endif %}
+                {% else %}"{{ content.author }}"{% endif %}
             {% else %}
                 "author": {% if site.author.name %} {
                 "name": "{{ site.author.name }}",

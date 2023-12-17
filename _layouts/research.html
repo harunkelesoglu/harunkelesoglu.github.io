@@ -24,10 +24,6 @@ layout: default
 </style>
 <section class="posts">
   <!-- <h1 style="color: #e03c31">Research</h1> -->
-  <!-- <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search for a tag or post...">
-    <ol id="results-container"></ol>
-  </div> -->
   <!-- <h2 style="color: #e03c31">Feed</h2>
   <a href="{{ site.baseurl }}/atom.xml" class="rss">RSS <span class="fa fa-rss" style="color: #ee802f"></span></a>
   <a href="{{ site.baseurl }}/feed.json" class="rss">JSON <span class="fa fa-rss" style="color: #ee802f"></span></a> -->
@@ -39,10 +35,14 @@ layout: default
     {% endfor %}
   </p> -->
   <h2 style="color: #e03c31" class="venenosa">Research</h2>
+  <div id="search-container">
+    <input type="text" id="search-input" placeholder="Search for a tag or research...">
+    <ol id="results-container"></ol>
+  </div>
   <div class="links-box">
   <ul>
-    {% for post in site.posts %}
-      <li><a style="color: black;" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d-%Y" }}</time></li>
+    {% for research in site.research %}
+      <li><a style="color: black;" href="{{ site.baseurl }}{{ post.url }}">{{ research.title }}</a><time datetime="{{ research.date | date_to_xmlschema }}">{{ research.date | date: "%m-%d-%Y" }}</time></li>
     {% endfor %}
   </ul>
   

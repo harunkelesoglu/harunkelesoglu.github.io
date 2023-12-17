@@ -34,7 +34,7 @@ collections:
   pages:
     output: true
     permalink: /:name
-  posts:
+  research:
     output: true
     permalink: /:year/:month/:day/:slug
   notes:
