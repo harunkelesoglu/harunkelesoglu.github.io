@@ -1,11 +1,11 @@
 title: H. Kelesoglu
-slogan: "Maths & Algoritms, Engineering, Management papers, notes, highlights, ..."
+slogan: "Maths & Algoritms, Engineering, Management research, notes, highlights, ..."
 navbar_title: "Kelesoglu"
 author:
   name: Harun Kelesoglu
   email: harun.kelesoglu19@gmail.com
 
-description: Papers, notes, and highlights about alagorithms, maths, engineerin, management from my professional journey and research 
+description: Research, notes, and highlights about alagorithms, maths, engineerin, management from my professional journey and research 
 
 url: "https://harunkelesoglu.github.io" # The base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # The subpath of your site, e.g. /blog

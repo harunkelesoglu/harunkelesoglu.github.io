@@ -304,5 +304,19 @@ time {
     background-color: rgb(26, 26, 26,1);
     background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%);
   }
+  .card {
+    border: 2px dotted #6c757d;
+    background-color: rgb(26, 26, 26,1);
+  }
+  
+  .card-title {
+    color: #e03c31!important;
+    font-size: medium;
+    padding-bottom: 0.25em;
+  }
+  
+  .card-body {
+    color: #6c757d!important;
+  }
 }
 

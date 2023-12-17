@@ -15,10 +15,10 @@ layout: default
         {% endif %}
         <div class="card-body">
           <h2 class="card-title"><b>{{ project.title }}</b></h2>
-          <p class="text-muted mb-2 card-subtitle" style="font-size: 110%">{{ project.stack }}</p>
+          <p class="text-muted mb-2 card-subtitle" style="font-size: 110%">#{{ project.stack }}</p>
           <p class="card-text">{{ project.snippet }}</p>
           <span class="read-more">{% if project.githublink %}<a href="{{ project.githublink }}" style="color: #000;" target="_blank"><span class="fa fa-github fa-lg"></span></a>{% endif %}</span>
-          <!-- <a class="read-more" href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a> -->
+          <a class="read-more" href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a>
         </div>
       </div>
     </div>
@@ -32,8 +32,8 @@ layout: default
           <h6 class="text-muted mb-2 card-subtitle" style="font-size: 110%">{{ project.stack }}</h6>
           <p class="card-text">{{ project.snippet }}</p>
           <span>{% if project.githublink %}<a href="{{ project.githublink }}" style="color: #000;" target="_blank"><span class="fa fa-github fa-lg"></span></a>{% endif %}</span>
-          <span>{% if project.npmlink %}<a href="{{ project.npmlink }}" style="color: #cb3837;" target="_blank"><span class="fa fa-npm fa-lg"></span></a>{% endif %}</span>
-          <!-- <a href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a> -->
+          <!-- <span>{% if project.npmlink %}<a href="{{ project.npmlink }}" style="color: #cb3837;" target="_blank"><i class="fa fa-npm fa-lg"></i></a>{% endif %}</span> -->
+          <a href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a>
         </div>
       </div>
     </div>
