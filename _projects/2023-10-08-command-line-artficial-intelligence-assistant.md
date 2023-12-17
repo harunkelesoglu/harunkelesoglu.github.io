@@ -9,7 +9,7 @@ order: 3
 usehighlight: true
 ---
 
-<h1 style="color: #cc0000" class="venenosa">CLAI</h1> 
+<h1 style="color: #e03c31;" class="venenosa">CLAI</h1> 
 
 **CLAI** is a command-line AI assistant tool designed for developers who prefer using the command-line interface (CLI) over a graphical user interface (UI). With CLAI, you can interact with OpenAI's GPT models directly from your CLI, eliminating the need to switch to a separate UI.
 

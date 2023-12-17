@@ -10,7 +10,7 @@ order: 1
 usehighlight: true
 ---
 
-<h1 style="color: #cc0000" class="venenosa">Localize-ai</h1>  
+<h1 style="color: #e03c31;" class="venenosa">Localize-ai</h1>  
 
 [![npm version](https://badge.fury.io/js/@kelesoglu%2Flocalize-ai.svg)](https://badge.fury.io/js/@kelesoglu%2Flocalize-ai)
 
