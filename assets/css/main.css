@@ -5,7 +5,7 @@ html {
 
 body {
   background: #ffffff;
-  color: #000000;
+  color: #6b6666;
   font-family: Verdana, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   margin-bottom: 40px;
@@ -288,16 +288,16 @@ time {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #1a1a1a;
+    background-color: #353535;
     color: #ffffff;
   }
   .hljs {
-    background-color: #1a1a1a;
+    background-color: #353535;
     color:  rgb(159, 153, 153) !important;
   }
   pre {
     border-radius: 5px;
-    border: 2px dotted #6c757d;
+    border: 2px dotted #bcc1c5;
     box-shadow:none !important;
   }
   .logo {
@@ -305,8 +305,8 @@ time {
     background-image: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%);
   }
   .card {
-    border: 2px dotted #6c757d;
-    background-color: rgb(26, 26, 26,1);
+    border: 2px dotted #bcc1c5;
+    background-color: #353535;
   }
   
   .card-title {
@@ -316,16 +316,16 @@ time {
   }
   
   .card-body {
-    color: #6c757d!important;
+    color: #bcc1c5!important;
   }
 
   #search-input {
-    background: #1a1a1a!important;
+    background: #353535!important;
     color: #ffffff!important;
   }
   #results-container {
-    background: #1a1a1a!important;
-    color:  color: #6c757d!important;
+    background: #353535!important;
+    color: #bcc1c5!important;
   }
 }
 
