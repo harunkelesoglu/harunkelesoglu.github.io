@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<h2 style="color: #e03c31;" class="venenosa">Projects</h2>
+{% assign ordering = site.projects | sort: "order" %}
+{% for project in ordering %}
+{% if project.pinned %}
+  <div class="row py-2">
+    <div class="col">
+      <div class="card border border-4">
+        {% if project.banner_image %}
+        <div class="p-3">
+          <img class="card-img-top rounded" src="{{ project.banner_image }}" alt="Banner image for project">
+        </div>
+        {% endif %}
+        <div class="card-body">
+          <h2 class="card-title"><b>{{ project.title }}</b></h2>
+          <p class="text-muted mb-2 card-subtitle" style="font-size: 110%">{{ project.stack }}</p>
+          <p class="card-text">{{ project.snippet }}</p>
+          <span class="read-more">{% if project.githublink %}<a href="{{ project.githublink }}" style="color: #000;" target="_blank"><span class="fa fa-github fa-lg"></span></a>{% endif %}</span>
+          <!-- <a class="read-more" href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="row py-2">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title pb-2" style="color: #333; font-size: 120%;">{{ project.title }}</h1>
+          <h6 class="text-muted mb-2 card-subtitle" style="font-size: 110%">{{ project.stack }}</h6>
+          <p class="card-text">{{ project.snippet }}</p>
+          <span>{% if project.githublink %}<a href="{{ project.githublink }}" style="color: #000;" target="_blank"><span class="fa fa-github fa-lg"></span></a>{% endif %}</span>
+          <span>{% if project.npmlink %}<a href="{{ project.npmlink }}" style="color: #cb3837;" target="_blank"><span class="fa fa-npm fa-lg"></span></a>{% endif %}</span>
+          <!-- <a href="{{ site.baseurl }}{{ project.url }}">&nbsp;Read more</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endfor %}

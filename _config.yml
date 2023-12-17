@@ -1,0 +1,48 @@
+title: H. Kelesoglu
+slogan: "Maths & Algoritms, Engineering, Management papers, notes, highlights, ..."
+navbar_title: "Kelesoglu"
+author:
+  name: Harun Kelesoglu
+  email: harun.kelesoglu19@gmail.com
+
+description: Papers, notes, and highlights about alagorithms, maths, engineerin, management from my professional journey and research 
+
+url: "https://harunkelesoglu.github.io" # The base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # The subpath of your site, e.g. /blog
+
+blog:
+  homepage_title: "Kelesoglu's blog" # Your homepage title
+  email: harun.kelesoglu19@gmail.com
+  footer: Author Year, 2021 # Your name, Year
+  contentlicense: "MIT" # Choose either one of these to put: MIT, Commons Clause, CC BY 4.0, CC BY-NC 4.0, CC BY-ND 4.0, CC BY-NC-ND 4.0, CC BY-NC-SA 4.0, CC BY-NC-SA 4.0, CC BY-SA 4.0
+  socials:
+    twitter: keles0glu # Your twitter username
+    github: harunkelesoglu # Your github username
+    linkedin: harunkeles0glu # Your linkedin
+    keybase: keybase # Your keybase
+
+# No need to edit this part, however if you want to, that's fine as well
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  notes:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  projects:
+    output: true
+    permalink: /:collection/:title
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
