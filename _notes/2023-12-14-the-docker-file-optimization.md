@@ -56,3 +56,5 @@ EXPOSE 80
 
 CMD ["node", "dist/index.js"]
 ``````
+
+**NOTE:** `--production` is added just for information. You should not use it in typescript projects because typescript is development dependency and you need it during build process.
