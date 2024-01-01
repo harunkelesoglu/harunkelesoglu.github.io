@@ -25,7 +25,7 @@ Producers can optionally provide a key when sending a message, and Kafka uses th
 **Acknowledgments:**
 Producers can be configured to receive acknowledgments (acks) from Kafka brokers, indicating whether the message was successfully written to the broker.
 
-#### 2.2 Consumer API
+#### 2.2 **Consumer API**
 
 **Consumer:**
 The Consumer API is used to subscribe to Kafka topics and read (consume) messages from those topics. Consumers can be part of a consumer group, allowing multiple consumers to work together to consume messages from a set of partitions.
@@ -45,7 +45,7 @@ Consumers poll Kafka for new messages. The `poll()` method is used to retrieve b
 ![Consumer Group](/assets/svg/consumer.group-offset.svg)
 
 
-### 3. Fundamental Architecture of a Broker
+### 3. **Fundamental Architecture of a Broker**
 
 * **Topic:**
   - A topic is like a database in Kafka. Producer delivers data to a topic, and consumers consume data from the topic.
@@ -59,7 +59,7 @@ Consumers poll Kafka for new messages. The `poll()` method is used to retrieve b
   ![Kafka Broker Architecture](/assets/svg/kafka-broker.svg)
 
 
-#### 3.1 Important Considerations
+#### 3.1 **Important Considerations**
 
 * **Append-Only:**
   - Kafka follows an append-only storage mechanism. Once a message is written to a partition, it is immutable, and the data cannot be modified.
@@ -68,7 +68,7 @@ Consumers poll Kafka for new messages. The `poll()` method is used to retrieve b
 * **Replication:**
   - For fault tolerance, each partition has multiple replicas distributed across different brokers, ensuring data accessibility even if a broker or partition becomes unavailable.
 
-#### 3.2 Partition Assignment Strategy
+#### 3.2 **Partition Assignment Strategy**
 
 In Kafka, the distribution of topics and partitions across brokers is determined by the partition assignment strategy. By default, Kafka uses a simple round-robin assignment strategy.
 
@@ -83,7 +83,7 @@ This distribution allows Kafka to take advantage of available resources on each 
 
 ![Kafka Fault Tolerance](/assets/svg/fault-tolerance.svg)
 
-### 4. Delivery Semantic
+### 4. **Delivery Semantic**
 
 There are three main delivery semantics in Kafka:
 
@@ -96,7 +96,7 @@ There are three main delivery semantics in Kafka:
 * **Exactly Once (Transactional Delivery):**
   - The most advanced and strict semantic, guaranteeing that a message is delivered exactly once, not lost, and not processed more than once. Kafka achieves this through the use of transactions, where the producer can send a batch of messages along with metadata in a single transaction. Consumers then read messages from a committed transaction, ensuring both message durability and single processing.
 
-### 5. ZooKeeper
+### 5. **ZooKeeper**
 
 ZooKeeper is an open-source distributed coordination service often used in conjunction with Apache Kafka to manage and coordinate distributed systems. No Kafka server can run without ZooKeeper. It provides coordination, synchronization, and distributed management services for Kafka's distributed environment. Specifically, ZooKeeper serves several key purposes within a Kafka cluster:
 
@@ -110,7 +110,7 @@ ZooKeeper is an open-source distributed coordination service often used in conju
  ![Zookeeper](/assets/svg/zookeeper.svg)
 
 
-### 6. Advantages & Disadvantages of Kafka
+### 6. **Advantages & Disadvantages of Kafka**
 
 **Advantages:**
 - **Low Latency:** Kafka offers low-latency processing, with values as low as 10 milliseconds.
@@ -126,21 +126,21 @@ ZooKeeper is an open-source distributed coordination service often used in conju
 - **Clumsy Behavior:** Kafka may exhibit clumsy behavior, especially when the number of topics increases in the cluster.
 - **Limited Monitoring Tools:** Kafka lacks a complete set of monitoring tools.
 
-### 7. Kafka Performance Improvements
+### 7. **Kafka Performance Improvements**
 
-#### 7.1 Disks I/O
+#### 7.1 **Disks I/O**
 
 - Kafka reads and writes data sequentially due to its log-centric architecture. Choose a disk type (HDDs or SSDs) that aligns well with Kafka's sequential access patterns.
 - Choosing XFS as the file system for the drives where Kafka data is stored can be beneficial for performance. Drives should be formatted as XFS, which efficiently handles large amounts of data and concurrent operations, optimizing for high-throughput workloads.
 - If read/write throughput is your bottleneck, mount multiple disks in parallel for Kafka.
 - Kafka's performance is directly proportional to the amount of data. Setting the retention of stored data as low as possible will reduce disk usage.
 
-#### 7.2 Network
+#### 7.2 **Network**
 
 - Kafka instances and ZooKeeper instances should be geographically close.
 - Bandwidth is crucial for Kafka due to its nature as a distributed streaming platform that handles large volumes of data in real-time.
 
-#### 7.3 RAM / JAVA Heap
+#### 7.3 **RAM / JAVA Heap**
 
 - A minimum of 8GB RAM is required for brokers, but 16 or 32GB will be more suitable.
 - Do not set -Xms for starting heap size. Set a maximum heap size (-Xmx) to ensure Kafka has enough memory resources.
@@ -149,12 +149,12 @@ ZooKeeper is an open-source distributed coordination service often used in conju
 ```
 - Make sure swapping is disabled for Kafka entirely (`vm.swappiness=0`, `vm.swappiness=1`).
 
-#### 7.4 CPU
+#### 7.4 **CPU**
 
 CPU is usually not a performance bottleneck in Kafka because Kafka does not parse any messages, but it can become one in some situations.
 - If you have SSL enabled, Kafka has to encrypt and decrypt every payload, which adds load on the CPU. Move Kafka to VPC and disable SSL.
 
-### 8. Some important configurations
+### 8. **Some important configurations**
 
 ```bash
 # Number of threads dedicated to handling background tasks
