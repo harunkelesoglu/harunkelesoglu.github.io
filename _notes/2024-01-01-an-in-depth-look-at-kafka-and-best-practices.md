@@ -9,6 +9,8 @@ title: An In-Depth Look at Kafka, Some Performance Improvements
 
 Kafka is a robust and low-latency broker widely preferred in most event-driven architectures. This notes explains the fundamental architecture, components,structure and performance improvements of Kafka.
 
+![Consumer Group](/assets/svg/apache-kafka.svg)
+
 ### 2. **Core API**
 
 #### 2.1 **Producer API**
