@@ -1,18 +1,18 @@
 ---
 layout: post
 usehighlight: true
-tags: [apache-kafka, kafka-best-practices]
+tags: [apache-kafka, kafka-best-practices,kafka-performance-improvements]
 title: An In-Depth Look at Kafka, Some Performance Improvements
 order: 1
 ---
 
-### 1. Introduction
+### 1. **Introduction**
 
 Kafka is a robust and low-latency broker widely preferred in most event-driven architectures. This notes explains the fundamental architecture, components,structure and performance improvements of Kafka.
 
-### 2. Core API
+### 2. **Core API**
 
-#### 2.1 Producer API
+#### 2.1 **Producer API**
 
 **Producer:**
 The Producer API is used to publish (write/produce) messages to Kafka topics. Producers can be configured with various parameters, including Kafka broker addresses, message key and value serializers, and more. They automatically handle the partitioning of messages across different partitions in a topic.
@@ -101,15 +101,15 @@ There are three main delivery semantics in Kafka:
 
 ZooKeeper is an open-source distributed coordination service often used in conjunction with Apache Kafka to manage and coordinate distributed systems. No Kafka server can run without ZooKeeper. It provides coordination, synchronization, and distributed management services for Kafka's distributed environment. Specifically, ZooKeeper serves several key purposes within a Kafka cluster:
 
-- Metadata Management: ZooKeeper manages and stores metadata related to the Kafka cluster, including information about brokers, topics, partitions, and the current state of the cluster.
-- Leader Election: Kafka relies on ZooKeeper for leader election in a partition. Each partition in Kafka has one leader broker responsible for handling reads and writes. ZooKeeper helps in the election process to ensure that a new leader is selected if the current leader fails.
-- Broker Registration: Kafka brokers register themselves in ZooKeeper, allowing other components (producers and consumers) to discover and communicate with available brokers.
-- Cluster Coordination: ZooKeeper coordinates the actions of different brokers in the Kafka cluster, ensuring they have a consistent view of the cluster state. This coordination is essential for maintaining the overall health and stability of the Kafka environment.
-- Notification and Watch Mechanism: ZooKeeper provides a notification and watch mechanism that Kafka components can leverage to be notified of changes in the cluster, such as the addition or removal of brokers or changes in topic configurations.
-- Configuration Management: ZooKeeper is used to store and manage configuration information for Kafka, including details about topic configurations, consumer group offsets, and other runtime configurations.
+- **Metadata Management:** ZooKeeper manages and stores metadata related to the Kafka cluster, including information about brokers, topics, partitions, and the current state of the cluster.
+- **Leader Election:** Kafka relies on ZooKeeper for leader election in a partition. Each partition in Kafka has one leader broker responsible for handling reads and writes. ZooKeeper helps in the election process to ensure that a new leader is selected if the current leader fails.
+- **Broker Registration:** Kafka brokers register themselves in ZooKeeper, allowing other components (producers and consumers) to discover and communicate with available brokers.
+- **Cluster Coordination:** ZooKeeper coordinates the actions of different brokers in the Kafka cluster, ensuring they have a consistent view of the cluster state. This coordination is essential for maintaining the overall health and stability of the Kafka environment.
+- **Notification and Watch Mechanism:** ZooKeeper provides a notification and watch mechanism that Kafka components can leverage to be notified of changes in the cluster, such as the addition or removal of brokers or changes in topic configurations.
+- **Configuration Management:** ZooKeeper is used to store and manage configuration information for Kafka, including details about topic configurations, consumer group offsets, and other runtime configurations.
 
  ![Zookeeper](/assets/svg/zookeeper.svg)
- 
+
 
 ### 6. Advantages & Disadvantages of Kafka
 
