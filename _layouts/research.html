@@ -41,7 +41,8 @@ layout: default
   </div>
   <div class="links-box">
   <ul>
-    {% for research in site.research %}
+    {% assign reversed_research = site.research | reverse %}
+    {% for research in reversed_research %}
       <li><a style="color: black;" href="{{ site.baseurl }}{{ post.url }}">{{ research.title }}</a><time datetime="{{ research.date | date_to_xmlschema }}">{{ research.date | date: "%m-%d-%Y" }}</time></li>
     {% endfor %}
   </ul>

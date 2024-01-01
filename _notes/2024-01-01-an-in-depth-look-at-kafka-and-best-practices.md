@@ -1,9 +1,8 @@
 ---
 layout: post
-usehighlight: true
+usehighlight: false
 tags: [apache-kafka, kafka-best-practices,kafka-performance-improvements]
 title: An In-Depth Look at Kafka, Some Performance Improvements
-order: 1
 ---
 
 ### 1. **Introduction**

@@ -1,9 +1,8 @@
 ---
 layout: post
-usehighlight: true
+usehighlight: false
 tags: [machine-learning, artificial-intelligence]
 title: The machine learning landscape
-order: 1
 ---
 Machine learning is the science that learns what actions to take from data without explicitly programming the computer. In the words of the pioneer name of  the artificial intelligence:
 

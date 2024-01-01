@@ -40,7 +40,8 @@ layout: default
     <ol id="results-container"></ol>
   </div>
   <ul>
-    {% for note in site.notes %}
+    {% assign reversed_notes = site.notes | reverse %}
+    {% for note in reversed_notes%}
       <li><a style="color: black;" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a><time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%m-%d-%Y" }}</time></li>
     {% endfor %}
   </ul>

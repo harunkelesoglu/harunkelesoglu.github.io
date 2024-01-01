@@ -1,9 +1,8 @@
 ---
 layout: post
-usehighlight: true
+usehighlight: false
 tags: [platform-infrastructure, optimization,docker]
 title: The docker file optimization
-order: 2
 ---
 ## Stage 1: Build Stage
 
